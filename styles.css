@@ -30,5 +30,16 @@ h3 {
 }
 
 p {
-  color: ;
+  color: hsl(229, 6%, 66%);
+}
+
+.container {
+  display: flex; /* or inline-flex */
+  margin: 0 auto; /* so it goes the center */
+  max-width: 1120px; /* I used an image preview and that shows the width */
+}
+
+.box {
+  background-color: white;
+  padding: 30px;
 }
