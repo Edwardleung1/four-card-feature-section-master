@@ -36,10 +36,30 @@ p {
 .container {
   display: flex; /* or inline-flex */
   margin: 0 auto; /* so it goes the center */
-  max-width: 1120px; /* I used an image preview and that shows the width */
+  max-width: 1140px; /* I used an image preview and that shows the width */
+  flex-wrap: wrap; /* Wrap onto multiple lines, from top to bottom */
+  justify-content: center; /* centers the boxes into the middle using the MAIN axis */
 }
 
 .box {
-  background-color: white;
-  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 6px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 30px; /* Used the image preview to measure space inside the box */
+  width: 350px; /* Used the image preview to measure width of the box */
+  margin: 15px; /* Used the image preview to measure space out the box */
+}
+
+.box > h3 {
+  margin: 0; /* gives no space for the h3 header in the box */
+}
+
+.box p {
+  font-size: 14px;
+  margin: 15px 0 30px;
+}
+
+.box > img {
+  display: block; /* displays the element as a block */
+  margin-left: auto; /* pushes the img to the right */
 }
