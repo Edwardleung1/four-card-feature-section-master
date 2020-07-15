@@ -48,6 +48,37 @@ p {
   padding: 30px; /* Used the image preview to measure space inside the box */
   width: 350px; /* Used the image preview to measure width of the box */
   margin: 15px; /* Used the image preview to measure space out the box */
+  position: relative; /* so the box has a position to go from */
+  overflow: hidden; /* better control of the layout */
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+}
+
+.box-red::after {
+  background-color: hsl(0, 78%, 62%);
+}
+
+.box-cyan::after {
+  background-color: hsl(180, 62%, 55%);
+}
+
+.box-orange::after {
+  background-color: hsl(34, 97%, 64%);
+}
+
+.box-blue::after {
+  background-color: hsl(212, 86%, 64%);
+}
+
+.box-push {
+  transform: translateY(50%); /* translated 50% of it's height from the top */
 }
 
 .box > h3 {
@@ -56,10 +87,18 @@ p {
 
 .box p {
   font-size: 14px;
-  margin: 15px 0 30px;
+  margin: 15px 0 40px;
 }
 
 .box > img {
   display: block; /* displays the element as a block */
   margin-left: auto; /* pushes the img to the right */
+}
+
+@media (max-width: 775px) {
+  .box-push {
+    transform: translateY(
+      0
+    ); /* make it stack on top of each other on smaller mobile */
+  }
 }
